@@ -131,6 +131,21 @@ void USyncComponent::ReturnMoveComponent(USceneComponent* Component, FMoveCompon
 	OnReturnMoveComponent.Broadcast(Component, Params, ID);
 }
 
+void USyncComponent::AddImpulse(FVector Impulse, bool bVelocityChange, bool bReplicate)
+{
+	if (bReplicate && bReplicateActions)
+	{
+		if (GetOwner()->HasAuthority())
+		{
+			Refs.CharacterMovement->AddImpulse(Impulse, bVelocityChange);
+		}
+		else
+		{
+			Server_AddImpulse(Impulse, bVelocityChange);
+		}
+	}
+}
+
 void USyncComponent::Server_PlayMontage_Implementation(UAnimMontage* Montage, FMontagePlayParams Params)
 {
 	PlayMontage(Montage, Params, true);
@@ -196,5 +211,10 @@ void USyncComponent::NetAll_MoveComponentAction_Implementation(EMoveComponentAct
 		ReturnMoveComponent(Component, Params, ID, false);
 		break;
 	}
+}
+
+void USyncComponent::Server_AddImpulse_Implementation(FVector Impulse, bool bVelocityChange)
+{
+	AddImpulse(Impulse, bVelocityChange);
 }
 

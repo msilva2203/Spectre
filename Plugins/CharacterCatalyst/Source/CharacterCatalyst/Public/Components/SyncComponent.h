@@ -119,6 +119,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Sync Component")
 	void ReturnMoveComponent(USceneComponent* Component, FMoveComponentParams Params, uint8 ID, bool bReplicate = true);
 
+	UFUNCTION(BlueprintCallable, Category = "Sync Component")
+	void AddImpulse(FVector Impulse, bool bVelocityChange = true, bool bReplicate = true);
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sync Component")
 	bool bReplicateActions;
@@ -175,4 +178,9 @@ private:
 	UFUNCTION(NetMulticast, Reliable)
 	void NetAll_MoveComponentAction(EMoveComponentActionType Action, USceneComponent* Component, FMoveComponentParams Params, uint8 ID);
 	void NetAll_MoveComponentAction_Implementation(EMoveComponentActionType Action, USceneComponent* Component, FMoveComponentParams Params, uint8 ID);
+
+	UFUNCTION(Server, Reliable)
+	void Server_AddImpulse(FVector Impulse, bool bVelocityChange);
+	void Server_AddImpulse_Implementation(FVector Impulse, bool bVelocityChange);
+	
 };

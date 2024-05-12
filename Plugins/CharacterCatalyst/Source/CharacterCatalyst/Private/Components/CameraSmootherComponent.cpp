@@ -41,6 +41,7 @@ void UCameraSmootherComponent::BeginPlay()
 		UpdateParams.Distance.InterpSpeed = DefaultInterpSpeed;
 		UpdateParams.TranslationLagSpeed.InterpSpeed = DefaultInterpSpeed;
 		UpdateParams.RotationLagSpeed.InterpSpeed = DefaultInterpSpeed;
+		UpdateParams.FOV.InterpSpeed = DefaultInterpSpeed;
 
 		SetToDefaultValues();
 	}
@@ -60,6 +61,7 @@ void UCameraSmootherComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 	CurrentSettings.Distance = InterpolateSetting(CurrentSettings.Distance, DeltaTime, UpdateParams.Distance);
 	CurrentSettings.TranslationLagSpeed = InterpolateSetting(CurrentSettings.TranslationLagSpeed, DeltaTime, UpdateParams.TranslationLagSpeed);
 	CurrentSettings.RotationLagSpeed = InterpolateSetting(CurrentSettings.RotationLagSpeed, DeltaTime, UpdateParams.RotationLagSpeed);
+	CurrentSettings.FOV = InterpolateSetting(CurrentSettings.FOV, DeltaTime, UpdateParams.FOV);
 
 	//******************************************************************
 	// Update camera
@@ -89,6 +91,9 @@ void UCameraSmootherComponent::UpdateCamera(const FCameraSettings& Settings, boo
 
 		ForceParam.Value = Settings.RotationLagSpeed;
 		UpdateSetting(ForceParam, ECameraSetting::RotationLagSpeed);
+
+		ForceParam.Value = Settings.FOV;
+		UpdateSetting(ForceParam, ECameraSetting::FOV);
 	}
 
 	//******************************************************************
@@ -110,6 +115,11 @@ void UCameraSmootherComponent::UpdateCamera(const FCameraSettings& Settings, boo
 	// Rotation Lag Speed
 	//******************************************************************
 	CameraArm->CameraRotationLagSpeed = Settings.RotationLagSpeed;
+
+	//******************************************************************
+	// Field Of View
+	//******************************************************************
+	Camera->SetFieldOfView(Settings.FOV);
 }
 
 void UCameraSmootherComponent::UpdateSetting(FCameraSettingUpdateParam UpdateParam, ECameraSetting Setting, uint8 CustomSetting)
@@ -133,6 +143,9 @@ void UCameraSmootherComponent::UpdateSetting(FCameraSettingUpdateParam UpdatePar
 		UpdateParams.RotationLagSpeed = UpdateParam;
 		PreviousSettings.RotationLagSpeed = UpdateParam.Value;
 		break;
+	case ECameraSetting::FOV:
+		UpdateParams.FOV = UpdateParam;
+		PreviousSettings.FOV = UpdateParam.Value;
 	case ECameraSetting::Custom:
 		break;
 	default:
@@ -165,6 +178,9 @@ void UCameraSmootherComponent::UpdateSettingToDefaultValue(float InterpSpeed, EC
 	case ECameraSetting::RotationLagSpeed:
 		Param.Value = DefaultSettings.RotationLagSpeed;
 		break;
+	case ECameraSetting::FOV:
+		Param.Value = DefaultSettings.FOV;
+		break;
 	case ECameraSetting::Custom:
 		return;
 	default:
@@ -193,6 +209,9 @@ void UCameraSmootherComponent::UpdateSettingToPreviousValue(float InterpSpeed, E
 	case ECameraSetting::RotationLagSpeed:
 		Param.Value = PreviousSettings.RotationLagSpeed;
 		break;
+	case ECameraSetting::FOV:
+		Param.Value = PreviousSettings.FOV;
+		break;
 	case ECameraSetting::Custom:
 		return;
 	default:
@@ -217,6 +236,9 @@ void UCameraSmootherComponent::UpdateSettingInterpSpeed(float InterpSpeed, ECame
 		break;
 	case ECameraSetting::RotationLagSpeed:
 		UpdateParams.RotationLagSpeed.InterpSpeed = InterpSpeed;
+		break;
+	case ECameraSetting::FOV:
+		UpdateParams.FOV.InterpSpeed = InterpSpeed;
 		break;
 	case ECameraSetting::Custom:
 		break;

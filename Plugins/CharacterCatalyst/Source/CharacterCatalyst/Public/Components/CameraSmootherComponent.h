@@ -15,6 +15,7 @@ enum class ECameraSetting : uint8
 	Distance                UMETA(DisplayName = "DISTANCE"),
 	TranslationLagSpeed     UMETA(DisplayName = "TRANSLATION_LAG_SPEED"),
 	RotationLagSpeed        UMETA(DisplayName = "ROTATION_LAG_SPEED"),
+	FOV						UMETA(DisplayName = "FOV"),
 	Custom                  UMETA(DisplayName = "CUSTOM")
 };
 
@@ -54,6 +55,9 @@ struct FCameraSettingUpdateParams
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Setting Update Params")
 	FCameraSettingUpdateParam RotationLagSpeed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Setting Update Params")
+	FCameraSettingUpdateParam FOV;
 };
 
 USTRUCT(BlueprintType)
@@ -72,6 +76,9 @@ struct FCameraSettings
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Setting")
 	float RotationLagSpeed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Setting")
+	float FOV;
 };
 
 
