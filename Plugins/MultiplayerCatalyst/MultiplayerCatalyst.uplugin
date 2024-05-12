@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.1",
+	"FriendlyName": "MultiplayerCatalyst",
+	"Description": "This plugin contains base functionality for multiplayer game development.",
+	"Category": "Multiplayer",
+	"CreatedBy": "Marco Silva",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "MultiplayerCatalyst",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "CharacterCatalyst",
+	"Description": "This plugin contains components to accelerate the development of your character.",
+	"Category": "Multiplayer",
+	"CreatedBy": "Marco Silva",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "CharacterCatalyst",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
