@@ -3,12 +3,7 @@
 Developed with Unreal Engine 5
 
 ## Overview
-Welcome to the repository for Spectre, an open-source competitive multiplayer game developed using Unreal Engine 5 (UE5). Spectre aims to provide an engaging and competitive experience with various gameplay modes and features.<br>
-
-This project was developed to test and improve my Unreal Engine 5 multiplayer/general development plugins:
-1. Multiplayer Catalyst
-2. Character Catalsyt
-3. User Interface Catalyst
+Welcome to the repository for Spectre, an open-source competitive multiplayer game developed using Unreal Engine 5 (UE5). Spectre aims to provide an engaging and competitive experience with various gameplay modes and features.
 
 ![Spectre Preview](Assets/SpectrePreview.png)
 
@@ -16,6 +11,12 @@ This project was developed to test and improve my Unreal Engine 5 multiplayer/ge
 - Competitive Online Multiplayer
 - Multiple Game Modes
 - Splitcreen Support
+
+## Objectives
+This project was developed to test and improve my Unreal Engine 5 multiplayer/general development plugins:
+1. Multiplayer Catalyst
+2. Character Catalsyt
+3. User Interface Catalyst
 
 ## Requirements
 - Unreal Engine 5: Download and install
