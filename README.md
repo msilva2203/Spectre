@@ -14,8 +14,8 @@ Welcome to the repository for Spectre, an open-source competitive multiplayer ga
 
 ## Objectives
 This project was developed to test and improve my Unreal Engine 5 multiplayer/general development plugins:
-1. **Multiplayer Catalyst:** Eases the development of multiplayer games with multiple game types and settings
-2. **Character Catalsyt:** Eases the development of network replicated gameplay
+1. **Multiplayer Catalyst:** Development of multiplayer games with multiple game types and settings
+2. **Character Catalsyt:** Replicated gameplay systems
 3. **User Interface Catalyst:** Abstracts the development and usability of user interface systems
 
 ## Requirements
