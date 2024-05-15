@@ -14,14 +14,14 @@ Welcome to the repository for Spectre, an open-source competitive multiplayer ga
 
 ## Objectives
 This project was developed to test and improve my Unreal Engine 5 multiplayer/general development plugins:
-1. Multiplayer Catalyst
-2. Character Catalsyt
-3. User Interface Catalyst
+1. **Multiplayer Catalyst:** Eases the development of multiplayer games with multiple game types and settings
+2. **Character Catalsyt:** Eases the development of network replicated gameplay
+3. **User Interface Catalyst:** Abstracts the development and usability of user interface systems
 
 ## Requirements
-- Unreal Engine 5: Download and install
-- Visual Studio 2019 or later (for Windows development)
-- Git: Version control system to manage the project repository
+- **Unreal Engine 5:** Download and install
+- **Visual Studio 2019 or later (for Windows development)**
+- **Git:** Version control system to manage the project repository
 
 ## Installation
 
