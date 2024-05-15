@@ -19,7 +19,7 @@ Welcome to the repository for Spectre, an open-source competitive multiplayer ga
 
 ### Cloning the Repository
 1. Clone the repository to your local machine: 
-`git clone https://github.com/yourusername/Spectre.git`
+`git clone https://github.com/msilva2203/Spectre.git`
 
 ### Setting Up Unreal Engine 5
 1. Open Unreal Engine 5.
