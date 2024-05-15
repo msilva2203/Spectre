@@ -5,6 +5,8 @@ Developed with Unreal Engine 5
 ## Overview
 Welcome to the repository for Spectre, an open-source competitive multiplayer game developed using Unreal Engine 5 (UE5). Spectre aims to provide an engaging and competitive experience with various gameplay modes and features.
 
+![Spectre Preview](Assets/SpectrePreview.png)
+
 ## Features
 - Competitive Online Multiplayer
 - Multiple Game Modes
