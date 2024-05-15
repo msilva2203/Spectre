@@ -18,7 +18,8 @@ Welcome to the repository for Spectre, an open-source competitive multiplayer ga
 ## Installation
 
 ### Cloning the Repository
-1. Clone the repository to your local machine: `git clone https://github.com/yourusername/Spectre.git`
+1. Clone the repository to your local machine: 
+`git clone https://github.com/yourusername/Spectre.git`
 
 ### Setting Up Unreal Engine 5
 1. Open Unreal Engine 5.
@@ -34,10 +35,10 @@ Welcome to the repository for Spectre, an open-source competitive multiplayer ga
 We welcome contributions from the community! To contribute, follow these steps:
 
 1. Fork the repository.
-2. Create a new branch (git checkout -b feature-branch).
+2. Create a new branch (`git checkout -b feature-branch`).
 3. Make your changes.
-3. Commit your changes (git commit -m 'Add new feature').
-4. Push to the branch (git push origin feature-branch).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
 5. Open a pull request.
 
 ## License
@@ -47,4 +48,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) 
 Epic Games: For Unreal Engine 5.
 
 ## Contact
-For any questions or suggestions, feel free to open an issue or contact us at your.email@example.com.
+For any questions or suggestions, feel free to open an issue or contact us at marcosilva2203@outlook.pt.
