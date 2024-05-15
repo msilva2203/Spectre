@@ -28,5 +28,11 @@ Welcome to the repository for Spectre, an open-source competitive multiplayer ga
 2. Configure the project settings as needed.
 3. Build the project using the UE5 Editor.
 
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
+
+## Acknowledgements
+Epic Games: For Unreal Engine 5.
+
 ## Contact
 For any questions or suggestions, feel free to open an issue or contact us at your.email@example.com.
