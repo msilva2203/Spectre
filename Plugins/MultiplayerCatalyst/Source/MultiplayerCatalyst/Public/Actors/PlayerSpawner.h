@@ -20,10 +20,19 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Player Spawner")
 	virtual void SpawnPlayer(APlayerControllerCatalyst* Player);
 
+	UFUNCTION()
+	virtual void NativeSetupNewPawn(APlayerControllerCatalyst* Player, APawn* NewPawn);
+
 	UFUNCTION(BlueprintImplementableEvent, Category = "Player Spawner")
-	void OnSpawnPlayer(APlayerControllerCatalyst* Player);
+	void SetupNewPawn(APlayerControllerCatalyst* Player, APawn* NewPawn);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Player Spawner")
+	void OnPlayerSpawned(APlayerControllerCatalyst* Player, APawn* NewPawn);
 
 public:
+	UPROPERTY(EditAnywhere, Category = "Player Spawner")
+	TSubclassOf<APawn> PawnSubclass;
+
 	UPROPERTY(EditAnywhere, Category = "Player Spawner")
 	uint8 SpawnerTeam;
 

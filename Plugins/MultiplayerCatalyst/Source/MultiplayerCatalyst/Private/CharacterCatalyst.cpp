@@ -32,6 +32,8 @@ void ACharacterCatalyst::SetupCharacter()
 
 void ACharacterCatalyst::OnRep_PlayerState()
 {
+	Super::OnRep_PlayerState();
+
 	SetupCharacter();
 }
 
