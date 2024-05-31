@@ -100,7 +100,6 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
-
 	UFUNCTION(BlueprintCallable, Category = "Sync Component")
 	void PlayMontage(UAnimMontage* Montage, FMontagePlayParams Params, bool bReplicate = true);
 
@@ -121,6 +120,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Sync Component")
 	void AddImpulse(FVector Impulse, bool bVelocityChange = true, bool bReplicate = true);
+
+	UFUNCTION(BlueprintCallable, Category = "Sync Component")
+	void LaunchCharacter(FVector LaunchVelocity, bool bXYOverride = false, bool bZOverride = false, bool bReplicate = true);
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sync Component")
@@ -183,4 +185,7 @@ private:
 	void Server_AddImpulse(FVector Impulse, bool bVelocityChange);
 	void Server_AddImpulse_Implementation(FVector Impulse, bool bVelocityChange);
 	
+	UFUNCTION(Server, Reliable)
+	void Server_LaunchCharacter(FVector LaunchVelocity, bool bXYOverride = false, bool bZOverride = false);
+	void Server_LaunchCharacter_Implementation(FVector LaunchVelocity, bool bXYOverride = false, bool bZOverride = false);
 };

@@ -135,15 +135,24 @@ void USyncComponent::AddImpulse(FVector Impulse, bool bVelocityChange, bool bRep
 {
 	if (bReplicate && bReplicateActions)
 	{
-		if (GetOwner()->HasAuthority())
-		{
-			Refs.CharacterMovement->AddImpulse(Impulse, bVelocityChange);
-		}
-		else
+		if (!GetOwner()->HasAuthority())
 		{
 			Server_AddImpulse(Impulse, bVelocityChange);
 		}
 	}
+	Refs.CharacterMovement->AddImpulse(Impulse, bVelocityChange);
+}
+
+void USyncComponent::LaunchCharacter(FVector LaunchVelocity, bool bXYOverride, bool bZOverride, bool bReplicate)
+{
+	if (bReplicate && bReplicateActions)
+	{
+		if (!GetOwner()->HasAuthority())
+		{
+			Server_LaunchCharacter(LaunchVelocity, bXYOverride, bZOverride);
+		}
+	}
+	Refs.Character->LaunchCharacter(LaunchVelocity, bXYOverride, bZOverride);
 }
 
 void USyncComponent::Server_PlayMontage_Implementation(UAnimMontage* Montage, FMontagePlayParams Params)
@@ -216,5 +225,10 @@ void USyncComponent::NetAll_MoveComponentAction_Implementation(EMoveComponentAct
 void USyncComponent::Server_AddImpulse_Implementation(FVector Impulse, bool bVelocityChange)
 {
 	AddImpulse(Impulse, bVelocityChange);
+}
+
+void USyncComponent::Server_LaunchCharacter_Implementation(FVector LaunchVelocity, bool bXYOverride, bool bZOverride)
+{
+	LaunchCharacter(LaunchVelocity, bXYOverride, bZOverride, false);
 }
 
