@@ -13,14 +13,14 @@ Welcome to the repository for Spectre, an open-source competitive multiplayer ga
 - Splitcreen Support
 
 ## Objectives
-This project was developed to test and improve my Unreal Engine 5 multiplayer/general purpose plugins:
+This project main objective is to develop and test my Unreal Engine 5 multiplayer/general purpose plugins:
 1. **Multiplayer Catalyst:** Development of multiplayer games with multiple game types
 2. **Character Catalsyt:** Replicated gameplay systems
 3. **User Interface Catalyst:** Development of user interface systems, including accessible menus and game displays
 
 ## Requirements
-- **Unreal Engine 5.0.3 or above**
-- **Visual Studio 2019 or later (for Windows development)**
+- **Unreal Engine 5.0.3 or later**
+- **Visual Studio 2022 or later (for Windows development)**
 - **Git:** Version control system to manage the project repository
 
 ## Installation
