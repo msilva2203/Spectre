@@ -1,6 +1,6 @@
 # Spectre
 
-Developed with Unreal Engine 5
+Developed with Unreal Engine 5.0.3
 
 ## Overview
 Welcome to the repository for Spectre, an open-source competitive multiplayer game developed using Unreal Engine 5 (UE5). Spectre aims to provide an engaging and competitive experience with various gameplay modes and features.
@@ -14,6 +14,7 @@ Welcome to the repository for Spectre, an open-source competitive multiplayer ga
 
 ## Objectives
 This project main objective is to develop and test my Unreal Engine 5 multiplayer/general purpose plugins:
+
 1. **Multiplayer Catalyst:** Development of multiplayer games with multiple game types
 2. **Character Catalsyt:** Replicated gameplay systems
 3. **User Interface Catalyst:** Development of user interface systems, including accessible menus and game displays
@@ -34,7 +35,7 @@ This project main objective is to develop and test my Unreal Engine 5 multiplaye
 2. Navigate to the cloned repository directory
 3. Right click `Spectre.uproject`
 4. Select `Generate Visual Studio project files`
-5. Open new Visual Studio Solution
+5. Open the generated Visual Studio Solution
 6. Build the Solution `Ctrl+B`
 
 ### Setting Up Unreal Engine 5
