@@ -160,6 +160,31 @@ APlayerSpawner* AGameModeCatalyst::FindAvailableSpawner(uint8 Team, bool bStarte
 	return nullptr;
 }
 
+void AGameModeCatalyst::SendChatMessageToPlayer(APlayerController* Player, const FChatMessage& ChatMessage, uint8 ChatID)
+{
+	UChatComponent* Chat;
+	if (UCatalystStatics::GetChat(Player, ChatID, Chat))
+	{
+		Chat->Client_ReceiveMessage(ChatMessage);
+	}
+}
+
+void AGameModeCatalyst::BroadcastChatMessage(const FChatMessage& ChatMessage, uint8 ChatID)
+{
+	for (auto& Player : SessionPlayers)
+	{
+		SendChatMessageToPlayer(Player, ChatMessage, ChatID);
+	}
+}
+
+void AGameModeCatalyst::BroadcastChatMessageToPlayers(const TArray<APlayerController*>& Players, const FChatMessage& ChatMessage, uint8 ChatID)
+{
+	for (auto& Player : Players)
+	{
+		SendChatMessageToPlayer(Player, ChatMessage, ChatID);
+	}
+}
+
 void AGameModeCatalyst::BeginPlay()
 {
 	Super::BeginPlay();

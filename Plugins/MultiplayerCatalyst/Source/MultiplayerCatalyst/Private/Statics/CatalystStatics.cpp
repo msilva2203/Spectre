@@ -16,6 +16,8 @@
 #include "Data/GameTypeData.h"
 #include "Data/MapData.h"
 #include "GameStateCatalyst.h"
+#include "GameModeCatalyst.h"
+#include "Components/ChatComponent.h"
 #include "Components/SettingsContainerComponent.h"
 
 bool UCatalystStatics::OpenLevel(const UObject* WorldContextObject, UGameTypeData* GameType, UMapData* Map, FString ExtraOptions)
@@ -45,6 +47,32 @@ AGameStateCatalyst* UCatalystStatics::GetGameStateCatalyst(const UObject* WorldC
 {
 	auto GS = UGameplayStatics::GetGameState(WorldContextObject);
 	return Cast<AGameStateCatalyst>(GS);
+}
+
+AGameModeCatalyst* UCatalystStatics::GetGameModeCatalyst(const UObject* WorldContextObject)
+{
+	auto GM = UGameplayStatics::GetGameMode(WorldContextObject);
+	return Cast<AGameModeCatalyst>(GM);
+}
+
+bool UCatalystStatics::GetChat(APlayerController* PlayerController, const uint8 ChatID, UChatComponent*& OutChat)
+{
+	if (PlayerController)
+	{
+		auto Comps = PlayerController->GetComponents();
+
+		for (auto& Comp : Comps)
+		{
+			OutChat = Cast<UChatComponent>(Comp);
+			if (OutChat)
+			{
+				if (OutChat->ChatID == ChatID)
+					return true;
+			}
+		}
+	}
+	OutChat = nullptr;
+	return false;
 }
 
 uint8 UCatalystStatics::GetActorTeam(AActor* Actor)

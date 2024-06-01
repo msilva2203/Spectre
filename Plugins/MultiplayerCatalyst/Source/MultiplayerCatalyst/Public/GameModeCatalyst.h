@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Components/ChatComponent.h"
 #include "GameModeCatalyst.generated.h"
 
 class APlayerControllerCatalyst;
@@ -71,6 +72,15 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Game Mode Catalyst")
 	virtual APlayerSpawner* FindAvailableSpawner(uint8 Team, bool bStarterSpawner = false);
+
+	UFUNCTION(BlueprintCallable, Category = "Game Mode Catalyst")
+	virtual void SendChatMessageToPlayer(APlayerController* Player, const FChatMessage& ChatMessage, uint8 ChatID);
+
+	UFUNCTION(BlueprintCallable, Category = "Game Mode Catalyst")
+	virtual void BroadcastChatMessage(const FChatMessage& ChatMessage, uint8 ChatID);
+
+	UFUNCTION(BlueprintCallable, Category = "Game Mode Catalyst")
+	virtual void BroadcastChatMessageToPlayers(const TArray<APlayerController*>& Players, const FChatMessage& ChatMessage, uint8 ChatID);
 
 protected:
 	virtual void BeginPlay() override;

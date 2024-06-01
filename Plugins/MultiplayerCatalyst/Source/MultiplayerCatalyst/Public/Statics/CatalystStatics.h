@@ -15,6 +15,8 @@ class UActorAttributeComponent;
 class UGameTypeData;
 class UMapData;
 class AGameStateCatalyst;
+class AGameModeCatalyst;
+class UChatComponent;
 
 /**
  * 
@@ -37,6 +39,14 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Catalyst Statics", meta = (WorldContext = "WorldContextObject", UnsafeDuringActorConstruction = "true"))
 	static AGameStateCatalyst* GetGameStateCatalyst(const UObject* WorldContextObject);
+
+	UFUNCTION(BlueprintPure, Category = "Catalyst Statics", meta = (WorldContext = "WorldContextObject", UnsafeDuringActorConstruction = "true"))
+	static AGameModeCatalyst* GetGameModeCatalyst(const UObject* WorldContextObject);
+
+	/* Chat */
+
+	UFUNCTION(BlueprintCallable, Category = "Catalyst Statics")
+	static bool GetChat(APlayerController* PlayerController, const uint8 ChatID, UChatComponent*& OutChat);
 
 	/* Game Logic */
 
